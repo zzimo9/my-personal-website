@@ -1,7 +1,7 @@
 export default function Home() {
   return (
     <div className="min-h-screen bg-white dark:bg-[#050505] text-zinc-900 dark:text-zinc-100 selection:bg-zinc-200 dark:selection:bg-zinc-800">
-      <main className="max-w-3xl mx-auto px-6 pt-32 pb-20 space-y-12">
+      <main className="max-w-5xl mx-auto px-6 pt-32 pb-20 space-y-12">
         {/* Hero Section */}
         <section className="space-y-6">
           <div className="space-y-2">
@@ -56,8 +56,8 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="max-w-3xl mx-auto px-6 py-12 border-t border-zinc-100 dark:border-zinc-900 text-zinc-500 text-sm">
-        <p>© 2026 Gildong Hong. Built with Next.js</p>
+      <footer className="max-w-5xl mx-auto px-6 py-12 border-t border-zinc-100 dark:border-zinc-900 text-zinc-500 text-sm">
+        <p>© 2026 DEV_KU. Built with Next.js</p>
       </footer>
     </div>
   );

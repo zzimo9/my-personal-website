@@ -13,11 +13,14 @@ export default function Home() {
             </p>
           </div>
           
-          <div className="prose prose-zinc dark:prose-invert max-w-none">
+          <div className="prose prose-zinc dark:prose-invert max-w-none space-y-4">
             <p className="text-lg leading-relaxed">
               안정성과 효율성을 최우선으로 하며, 복잡한 인프라 문제를 자동화와 혁신적인 아키텍처로 해결하는 과정에 보람을 느낍니다. 
+            </p>
+            <p className="text-lg leading-relaxed">
               현재는 금융 시스템의 신뢰성을 높이기 위한 기술적 도전들을 즐기고 있습니다.
-              <br />
+            </p>
+            <p className="text-lg leading-relaxed">
               AX를 통한 시스템인프라의 신뢰성과 편의성을 높이기 위한 기술들을 학습하고 정리하는 공간입니다.
             </p>
           </div>

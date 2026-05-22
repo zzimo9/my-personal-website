@@ -6,17 +6,17 @@ export default function Home() {
         <section className="space-y-6">
           <div className="space-y-2">
             <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
-              안녕하세요, <span className="text-zinc-500">홍길동</span>입니다.
+              안녕하세요, <span className="text-zinc-500">KUJAEMO</span>입니다.
             </h1>
             <p className="text-xl text-zinc-600 dark:text-zinc-400">
-              사용자 경험을 고민하는 프론트엔드 개발자입니다.
+              금융권 인프라를 최적화하고 시스템 자동화 아키텍처를 설계하는 시스템 엔지니어입니다.
             </p>
           </div>
           
           <div className="prose prose-zinc dark:prose-invert max-w-none">
             <p className="text-lg leading-relaxed">
-              복잡한 문제를 단순하고 직관적인 코드로 해결하는 것을 좋아하며, 
-              항상 새로운 기술과 디자인 트렌드에 관심을 가지고 학습하고 있습니다.
+              안정성과 효율성을 최우선으로 하며, 복잡한 인프라 문제를 자동화와 혁신적인 아키텍처로 해결하는 과정에 보람을 느낍니다. 
+              현재는 금융 시스템의 신뢰성을 높이기 위한 기술적 도전들을 즐기고 있습니다.
             </p>
           </div>
 
@@ -28,7 +28,7 @@ export default function Home() {
               프로젝트 보기
             </a>
             <a 
-              href="mailto:contact@example.com" 
+              href="mailto:zzimo9@gmail.com" 
               className="inline-flex items-center justify-center px-6 py-3 text-sm font-medium transition-all border rounded-full border-zinc-200 hover:bg-zinc-50 dark:border-zinc-800 dark:hover:bg-zinc-900"
             >
               연락하기

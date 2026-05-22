@@ -6,10 +6,10 @@ export default function Home() {
         <section className="space-y-6">
           <div className="space-y-2">
             <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
-              안녕하세요, <span className="text-zinc-500">KUJAEMO</span>입니다.
+              안녕하세요, <span className="text-zinc-500">DEV_KU</span>입니다.
             </h1>
             <p className="text-xl text-zinc-600 dark:text-zinc-400">
-              금융권 인프라를 최적화하고 시스템 자동화 아키텍처를 설계하는 시스템 엔지니어입니다.
+              금융권 인프라를 최적화하고 시스템 자동화를 설계하는 시스템 엔지니어입니다.
             </p>
           </div>
           
@@ -17,6 +17,8 @@ export default function Home() {
             <p className="text-lg leading-relaxed">
               안정성과 효율성을 최우선으로 하며, 복잡한 인프라 문제를 자동화와 혁신적인 아키텍처로 해결하는 과정에 보람을 느낍니다. 
               현재는 금융 시스템의 신뢰성을 높이기 위한 기술적 도전들을 즐기고 있습니다.
+              <br />
+              AX를 통한 시스템인프라의 신뢰성과 편의성을 높이기 위한 기술들을 학습하고 정리하는 공간입니다.
             </p>
           </div>
 

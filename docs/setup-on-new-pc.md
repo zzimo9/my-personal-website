@@ -22,6 +22,8 @@
 - GitHub Pages 배포 워크플로
 - 문서와 자동화 프롬프트
 - 뉴스 아카이브용 정적 JSON 데이터
+- 포트폴리오 에이전트용 `.portfolio/project.json`
+- 공개 안전 메타데이터 계약 문서 `docs/portfolio-metadata-contract.md`
 
 ## GitHub에 넣지 않는 것
 
@@ -106,6 +108,13 @@ npm run build
 
 이 두 명령이 통과하면 새 PC에서도 환경이 정상적으로 복구된 것입니다.
 
+현재 기준 검증 환경:
+
+- WSL2 Ubuntu
+- Node.js `24.14.0`
+- npm `11.9.0` 이상
+- VS Code Remote WSL
+
 ## 6. 작업 브랜치 권장
 
 ```bash
@@ -138,8 +147,25 @@ git push -u origin feature/my-change
 
 - 뉴스 자동화는 GitHub Pages 내부에서 실행되지 않습니다.
 - 외부 AI Agent 또는 cron이 `src/content/news/*.json`을 갱신한 뒤 push 해야 합니다.
+- 포트폴리오 자동화는 `.portfolio/project.json`을 source of truth로 사용합니다.
+- private repo는 summary-only/public-safe metadata만 웹 저장소에 반영합니다.
+- 세부 규칙은 [docs/portfolio-metadata-contract.md](portfolio-metadata-contract.md)를 먼저 확인합니다.
 
-## 9. 빠른 복구 요약
+## 9. 이어받기 전 체크
+
+```bash
+cd ~/workspace/my-personal-website
+git switch main
+git pull --ff-only origin main
+nvm use
+npm install
+npm run lint
+npm run build
+```
+
+작업 시작 전 `git status --short --branch`가 깨끗한지 확인합니다.
+
+## 10. 빠른 복구 요약
 
 ```bash
 mkdir -p ~/workspace

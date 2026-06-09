@@ -17,31 +17,36 @@
 <body>
     <h1>프로젝트 인수인계 문서</h1>
     <p><strong>프로젝트명:</strong> my-personal-website</p>
-    <p><strong>기준일:</strong> 2026-06-09</p>
+    <p><strong>기준일:</strong> 2026-06-10</p>
 
     <h2>1. 현재 상태</h2>
     <ul>
         <li>Next.js 16 App Router 기반의 개인 웹사이트입니다.</li>
         <li>정적 export 설정으로 GitHub Pages 배포가 가능하도록 정리되었습니다.</li>
-        <li>홈은 포트폴리오 중심의 editorial landing 구조로 개편되어 있습니다.</li>
+        <li>홈은 포트폴리오 중심의 단정한 landing 구조로 정리되어 있습니다.</li>
         <li>뉴스는 메인 홈이 아니라 별도 archive 경로로 분리되어 있습니다.</li>
         <li>공개 저장소 기준 보안 문서와 Dependabot 설정이 추가되었습니다.</li>
+        <li>포트폴리오 에이전트용 <code>.portfolio/project.json</code>과 public-safe metadata contract가 추가되었습니다.</li>
+        <li>현재 권장 작업 위치는 WSL2 Ubuntu 내부 <code>~/workspace/my-personal-website</code>입니다.</li>
     </ul>
 
     <h2>2. 완료된 정리</h2>
     <ul>
         <li><span class="done">[완료]</span> 기본 create-next-app 문서 제거</li>
         <li><span class="done">[완료]</span> GitHub Pages 정적 배포 설정 추가</li>
-        <li><span class="done">[완료]</span> 홈페이지 editorial redesign 반영</li>
+        <li><span class="done">[완료]</span> 홈페이지 포트폴리오 landing 정리</li>
         <li><span class="done">[완료]</span> 뉴스 archive JSON 구조 추가</li>
         <li><span class="done">[완료]</span> 새 PC 복구 / 두 PC 브랜치 운영 문서화</li>
         <li><span class="done">[완료]</span> 공개 저장소 보안 하드닝 문서와 Dependabot 추가</li>
+        <li><span class="done">[완료]</span> WSL2 Ubuntu + VS Code Remote WSL 개발환경 구성</li>
+        <li><span class="done">[완료]</span> 포트폴리오 에이전트 metadata contract 추가</li>
+        <li><span class="done">[완료]</span> private repo summary-only / credential metadata 공개 금지 정책 반영</li>
         <li><span class="done">[완료]</span> Next.js 16.2.7 + PostCSS 8.5.15 override로 audit 0 취약점 확인</li>
     </ul>
 
     <h2>3. 다음 작업</h2>
     <ul>
-        <li><span class="todo">[다음]</span> 실제 작업물 데이터로 포트폴리오 카드 교체</li>
+        <li><span class="todo">[다음]</span> portfolio-agent가 생성하는 <code>src/content/projects</code> 렌더링 구조 연결</li>
         <li><span class="todo">[다음]</span> GitHub UI에서 <code>main</code> branch protection 실제 활성화</li>
         <li><span class="todo">[다음]</span> custom domain 사용 여부 결정 후 SEO / metadata 정리</li>
         <li><span class="todo">[다음]</span> 외부 AI agent 또는 cron과 뉴스 JSON 갱신 루틴 연결</li>
@@ -59,7 +64,17 @@ npm run dev
 npm run build
 npm run lint</pre>
 
-    <h2>5. 현재 기준 커밋</h2>
-    <p><code>971dadf</code> - Harden public repository security</p>
+    <h2>5. 작업 전 확인</h2>
+    <pre>git switch main
+git pull --ff-only origin main
+nvm use
+npm install
+npm run lint
+npm run build</pre>
+
+    <p>포트폴리오 자동화 관련 규칙은 <code>docs/portfolio-metadata-contract.md</code>와 <code>.portfolio/project.json</code>을 먼저 확인합니다.</p>
+
+    <h2>6. 현재 기준 커밋</h2>
+    <p><code>git log -1 --oneline</code>으로 최신 main 커밋을 확인합니다.</p>
 </body>
 </html>

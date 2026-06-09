@@ -17,3 +17,4 @@
 
 - Replaced placeholder project sections with live portfolio entries and repository links.
 - Added GitHub Pages-based canonical, Open Graph, Twitter, author, and keyword metadata.
+- Added `.portfolio/project.json` and a public-safe portfolio metadata contract for portfolio-agent.

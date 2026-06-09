@@ -5,3 +5,5 @@
 - News content is stored as JSON files under `src/content/news`.
 - Keep article content summarized; do not paste full source material.
 - Prefer changes that keep the Antigravity automation flow simple and reviewable.
+- Portfolio metadata rules live in `docs/portfolio-metadata-contract.md`.
+- Treat `.portfolio/project.json` as the source of truth for portfolio-agent metadata.

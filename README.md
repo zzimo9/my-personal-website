@@ -40,6 +40,28 @@ npm run build
 이 프로젝트는 `output: "export"`를 사용하므로 서버 런타임 없이 정적 사이트로 배포됩니다.
 
 새 PC 환경 복구 가이드는 [docs/setup-on-new-pc.md](/C:/devku/my-personal-website/docs/setup-on-new-pc.md) 에 정리되어 있습니다.
+브랜치 운영 전략은 [docs/branch-strategy.md](/C:/devku/my-personal-website/docs/branch-strategy.md) 에 정리되어 있습니다.
+두 대의 개발 PC를 오가며 작업하는 흐름은 [docs/two-pc-workflow.md](/C:/devku/my-personal-website/docs/two-pc-workflow.md) 에 정리되어 있습니다.
+
+## Branch Workflow
+
+이 저장소는 `main = 운영 배포용` 원칙으로 운영합니다.
+
+- `main`
+  - GitHub Pages 운영 배포 기준 브랜치
+  - 배포 가능한 안정 코드만 유지
+- `feature/*`
+  - 신규 작업 브랜치
+  - 집 PC와 다른 PC 모두 같은 작업 브랜치를 이어서 사용 가능
+- `hotfix/*`
+  - 운영 중 긴급 수정 브랜치
+
+중요 원칙:
+
+- `main`에서 직접 기능 개발하지 않기
+- 작업은 항상 `feature/*` 또는 `hotfix/*`에서 진행
+- 다른 PC로 넘어가기 전에는 반드시 `commit` 후 `push`
+- `main` 반영 후에만 운영 배포
 
 ## GitHub Pages Deployment
 

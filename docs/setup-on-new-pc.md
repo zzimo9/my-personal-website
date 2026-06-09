@@ -84,14 +84,23 @@ npm run build
 ## 6. 작업 브랜치 권장
 
 ```bash
-git checkout -b feature/my-change
+git switch main
+git pull --ff-only origin main
+git switch -c feature/my-change
 ```
 
-작업 후에는 필요 시 `main`으로 반영하거나:
+작업을 다른 PC에서도 이어갈 계획이면 커밋 후 작업 브랜치 자체를 push 합니다.
 
 ```bash
-git push origin HEAD:main
+git push -u origin feature/my-change
 ```
+
+운영 배포는 `main` 반영 후에만 진행합니다.
+
+브랜치 전략과 두 PC 운영 흐름은 아래 문서를 참고하면 됩니다.
+
+- [docs/branch-strategy.md](/C:/devku/my-personal-website/docs/branch-strategy.md)
+- [docs/two-pc-workflow.md](/C:/devku/my-personal-website/docs/two-pc-workflow.md)
 
 ## 7. 배포 관련 메모
 

@@ -1,10 +1,12 @@
 {
-  "name": "my-app",
+  "name": "my-personal-website",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "https": "next dev --experimental-https",
     "build": "next build",
+    "build:pages": "next build",
     "start": "next start",
     "lint": "eslint"
   },

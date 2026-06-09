@@ -1,26 +1,47 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --site-bg: #f7f3ea;
+  --site-fg: #1f1b18;
+  --site-muted: #72695f;
+  --site-border: #ddd2c1;
+  --site-surface: #efe5d6;
+  --font-sans: "Segoe UI", "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "Cascadia Code", "D2Coding", "SFMono-Regular", Consolas, monospace;
+}
+
+html.dark {
+  --site-bg: #151413;
+  --site-fg: #ece4da;
+  --site-muted: #9e9387;
+  --site-border: #302a25;
+  --site-surface: #211d1a;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-background: var(--site-bg);
+  --color-foreground: var(--site-fg);
+  --color-muted: var(--site-muted);
+  --color-border: var(--site-border);
+  --color-surface: var(--site-surface);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  background:
+    radial-gradient(circle at top left, rgb(255 255 255 / 0.35), transparent 32%),
+    linear-gradient(180deg, rgb(255 255 255 / 0.02), transparent 24%),
+    var(--site-bg);
+}
+
+::selection {
+  background-color: var(--site-fg);
+  color: var(--site-bg);
+}
+
+a {
+  color: inherit;
 }

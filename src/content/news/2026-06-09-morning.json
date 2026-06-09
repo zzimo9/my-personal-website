@@ -1,0 +1,39 @@
+{
+  "slug": "2026-06-09-morning",
+  "edition": "morning",
+  "title": "2026년 6월 9일 출근신문",
+  "publishedAt": "2026-06-09T09:00:00+09:00",
+  "timeframeLabel": "전일 마감 ~ 오늘 아침",
+  "deck": "업무 시작 전에 빠르게 훑어볼 수 있도록 인공지능, 플랫폼, 금융 IT 관점의 주요 흐름을 압축했습니다.",
+  "keyTakeaways": [
+    "AI 서비스 기업들이 비용 절감보다 운영 자동화 성과를 전면에 내세우기 시작했습니다.",
+    "국내외 금융권은 생성형 AI 도입보다 내부 통제와 로그 추적 체계 정비에 더 많은 예산을 배정하는 분위기입니다.",
+    "클라우드와 보안 영역에서는 '짧은 수명 토큰'과 '배포 증명'이 기본 요구사항으로 굳어지고 있습니다."
+  ],
+  "articles": [
+    {
+      "title": "주요 AI 플랫폼, 에이전트 운영 지표를 신규 핵심 KPI로 확대",
+      "source": "Tech Daily",
+      "category": "AI",
+      "publishedAt": "2026-06-09T07:15:00+09:00",
+      "summary": "시장 분위기가 단순 모델 성능 경쟁에서 실제 자동화 성과와 운영 지표 중심으로 이동하고 있습니다. 에이전트 작업 성공률, 회수율, 실패 복구 시간이 이제 도입 검토의 핵심 척도로 보입니다.",
+      "url": "https://example.com/tech-daily/agent-kpi"
+    },
+    {
+      "title": "금융권 생성형 AI 도입, 내부 감사 로그 체계가 우선 과제로 부상",
+      "source": "Finance Infra News",
+      "category": "금융 IT",
+      "publishedAt": "2026-06-09T06:40:00+09:00",
+      "summary": "실서비스 적용 전 단계에서 감사 가능성과 승인 흐름 추적성이 가장 중요한 선결 과제로 지목됐습니다. 보안팀과 운영팀이 함께 검토하는 공동 거버넌스 모델이 늘어나고 있습니다.",
+      "url": "https://example.com/finance/audit-log-priority"
+    },
+    {
+      "title": "클라우드 공급망 보안, 배포 증명과 서명 검증 도입 속도 상승",
+      "source": "Cloud Brief",
+      "category": "클라우드",
+      "publishedAt": "2026-06-09T05:55:00+09:00",
+      "summary": "소프트웨어 공급망 이슈 이후 배포 결과물에 대한 서명과 출처 증명이 빠르게 표준화되고 있습니다. 공개 저장소 기반 프로젝트도 provenance 검증 요구가 커지는 중입니다.",
+      "url": "https://example.com/cloud/provenance-standard"
+    }
+  ]
+}

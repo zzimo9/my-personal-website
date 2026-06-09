@@ -1,0 +1,39 @@
+{
+  "slug": "2026-06-09-evening",
+  "edition": "evening",
+  "title": "2026년 6월 9일 퇴근신문",
+  "publishedAt": "2026-06-09T18:00:00+09:00",
+  "timeframeLabel": "오늘 오전 ~ 오늘 마감",
+  "deck": "하루 마감 전에 체크할 만한 기술, 보안, 운영 이슈를 중심으로 정리한 저녁 브리핑입니다.",
+  "keyTakeaways": [
+    "기업들은 브라우저 기반 AI 에이전트보다 저장소와 배포 파이프라인을 다루는 코딩형 에이전트 운영 정책을 더 빠르게 구체화하고 있습니다.",
+    "개인 프로젝트도 GitHub Actions 권한, 토큰 범위, 배포 자동화 구조를 명확히 나누는 흐름이 늘어나고 있습니다.",
+    "뉴스 큐레이션 서비스는 실시간성보다 '신뢰할 수 있는 두 번의 정기 브리핑' 형태가 오히려 더 높은 체류를 만드는 분위기입니다."
+  ],
+  "articles": [
+    {
+      "title": "개발자 툴 시장, 정기 브리핑형 AI 요약 서비스 수요 증가",
+      "source": "Builder Times",
+      "category": "서비스",
+      "publishedAt": "2026-06-09T16:50:00+09:00",
+      "summary": "실시간 속보보다 출근 전과 퇴근 전의 정해진 리듬으로 정보를 받아보려는 선호가 늘었습니다. 신호 대비 잡음을 줄이는 편집 구조가 차별점으로 평가됩니다.",
+      "url": "https://example.com/builders/briefing-demand"
+    },
+    {
+      "title": "오픈 저장소 운영 보안, 최소 권한 설정과 브랜치 보호 재점검 권고",
+      "source": "Security Log",
+      "category": "보안",
+      "publishedAt": "2026-06-09T15:20:00+09:00",
+      "summary": "공개 저장소 기반 개인 프로젝트도 기본적으로 branch protection, secret scanning, fine-grained token 관리를 함께 두는 것이 권장되고 있습니다. 자동화 편의성과 보안 사이의 기준선이 더 엄격해졌습니다.",
+      "url": "https://example.com/security/open-repo-hardening"
+    },
+    {
+      "title": "플랫폼 팀, AI 에이전트 실행 결과를 정적 콘텐츠로 남기는 방식 선호",
+      "source": "Ops Weekly",
+      "category": "운영",
+      "publishedAt": "2026-06-09T14:35:00+09:00",
+      "summary": "데이터베이스에 직접 반영하기보다 JSON과 Markdown 같은 리뷰 가능한 산출물로 먼저 남기고, 이후 배포에 태우는 패턴이 안정적이라는 평가입니다. Git diff 기반 검수 흐름이 강점으로 꼽힙니다.",
+      "url": "https://example.com/ops/static-content-pipeline"
+    }
+  ]
+}

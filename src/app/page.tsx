@@ -1,67 +1,288 @@
-export default function Home() {
+import Link from "next/link";
+import { portfolioContent } from "@/content/portfolio";
+import { editionLabel, formatBriefingDate, getAllBriefings } from "@/lib/news";
+
+export default async function Home() {
+  const allBriefings = await getAllBriefings();
+  const latestBriefings = allBriefings.slice(0, 2);
+
   return (
-    <div className="min-h-screen bg-white dark:bg-[#050505] text-zinc-900 dark:text-zinc-100 selection:bg-zinc-200 dark:selection:bg-zinc-800">
-      <main className="max-w-5xl mx-auto px-6 pt-32 pb-20 space-y-12">
-        {/* Hero Section */}
-        <section className="space-y-6">
-          <div className="space-y-2">
-            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
-              안녕하세요, <span className="text-zinc-500">DEV_KU</span>입니다.
+    <main className="mx-auto max-w-5xl space-y-24 px-6 pb-24 pt-16">
+      <section className="grid gap-10 lg:grid-cols-[1.15fr_0.85fr]">
+        <div className="space-y-6">
+          <p className="font-mono text-xs uppercase tracking-[0.28em] text-muted">
+            {portfolioContent.eyebrow}
+          </p>
+          <div className="space-y-4">
+            <h1 className="max-w-3xl text-4xl font-semibold tracking-tight sm:text-5xl">
+              {portfolioContent.title}
             </h1>
-            <p className="text-xl text-zinc-600 dark:text-zinc-400">
-              금융권 인프라를 최적화하고 시스템 자동화를 설계하는 시스템 엔지니어입니다.
+            <p className="max-w-2xl text-base leading-7 text-muted">
+              {portfolioContent.intro}
             </p>
           </div>
-          
-          <div className="prose prose-zinc dark:prose-invert max-w-none space-y-4">
-            <p className="text-lg leading-relaxed">
-              안정성과 효율성을 최우선으로 하며, 복잡한 인프라 문제를 자동화와 혁신적인 아키텍처로 해결하는 과정에 보람을 느낍니다. 
-            </p>
-            <p className="text-lg leading-relaxed">
-              현재는 금융 시스템의 신뢰성을 높이기 위한 기술적 도전들을 즐기고 있습니다.
-            </p>
-            <p className="text-lg leading-relaxed">
-              AX를 통한 시스템인프라의 신뢰성과 편의성을 높이기 위한 기술들을 학습하고 정리하는 공간입니다.
-            </p>
+          <div className="flex flex-wrap gap-3 text-sm">
+            {portfolioContent.links.map((link, index) =>
+              link.href.startsWith("http") ? (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  className={`rounded-full px-5 py-2.5 transition-colors ${
+                    index === 0
+                      ? "bg-foreground text-background transition-opacity hover:opacity-85"
+                      : "border border-border hover:border-foreground"
+                  }`}
+                >
+                  {link.label}
+                </a>
+              ) : (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  className={`rounded-full px-5 py-2.5 transition-colors ${
+                    index === 0
+                      ? "bg-foreground text-background transition-opacity hover:opacity-85"
+                      : "border border-border hover:border-foreground"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              ),
+            )}
           </div>
+        </div>
 
-          <div className="flex flex-wrap gap-4 pt-4">
-            <a 
-              href="#projects" 
-              className="inline-flex items-center justify-center px-6 py-3 text-sm font-medium transition-all rounded-full bg-zinc-900 text-zinc-50 hover:bg-zinc-800 dark:bg-zinc-50 dark:text-zinc-900 dark:hover:bg-zinc-200"
-            >
-              프로젝트 보기
-            </a>
-            <a 
-              href="mailto:zzimo9@gmail.com" 
-              className="inline-flex items-center justify-center px-6 py-3 text-sm font-medium transition-all border rounded-full border-zinc-200 hover:bg-zinc-50 dark:border-zinc-800 dark:hover:bg-zinc-900"
-            >
-              연락하기
-            </a>
-          </div>
-        </section>
-
-        {/* Featured Section Placeholder */}
-        <section id="projects" className="pt-20 border-t border-zinc-100 dark:border-zinc-900">
-          <h2 className="text-2xl font-semibold mb-8">Selected Projects</h2>
-          <div className="grid grid-cols-1 gap-6">
-            <div className="group relative p-6 rounded-2xl border border-zinc-100 dark:border-zinc-900 hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-all">
-              <h3 className="text-lg font-medium mb-2">My Awesome Project</h3>
-              <p className="text-zinc-600 dark:text-zinc-400 mb-4">
-                Next.js와 Tailwind를 사용하여 구축한 개인 홈페이지입니다.
-              </p>
-              <div className="flex gap-2">
-                <span className="text-xs px-2 py-1 bg-zinc-100 dark:bg-zinc-800 rounded">Next.js</span>
-                <span className="text-xs px-2 py-1 bg-zinc-100 dark:bg-zinc-800 rounded">Tailwind</span>
+        <aside className="rounded-3xl border border-border bg-surface/55 p-6">
+          <p className="font-mono text-xs uppercase tracking-[0.25em] text-muted">At a Glance</p>
+          <div className="mt-5 space-y-5">
+            {portfolioContent.highlights.map((item) => (
+              <div
+                key={item.label}
+                className="border-b border-border pb-5 last:border-b-0 last:pb-0"
+              >
+                <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-muted">
+                  {item.label}
+                </p>
+                <p className="mt-2 text-sm leading-7">{item.value}</p>
               </div>
-            </div>
+            ))}
           </div>
-        </section>
-      </main>
+        </aside>
+      </section>
 
-      <footer className="max-w-5xl mx-auto px-6 py-12 border-t border-zinc-100 dark:border-zinc-900 text-zinc-500 text-sm">
-        <p>© 2026 DEV_KU. Built with Next.js</p>
-      </footer>
-    </div>
+      <section id="work" className="space-y-6">
+        <div>
+          <p className="font-mono text-xs uppercase tracking-[0.25em] text-muted">
+            Selected Focus
+          </p>
+          <h2 className="mt-2 text-2xl font-semibold tracking-tight">
+            지금 이 포트폴리오 서버에서 보여줄 핵심 축
+          </h2>
+        </div>
+
+        <div className="grid gap-5 md:grid-cols-3">
+          {portfolioContent.focusAreas.map((area) => (
+            <article
+              key={area.title}
+              className="rounded-3xl border border-border bg-surface/45 p-6"
+            >
+              <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-muted">
+                {area.title}
+              </p>
+              <p className="mt-4 text-lg font-medium">{area.body}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="space-y-6">
+        <div className="flex items-end justify-between gap-4">
+          <div>
+            <p className="font-mono text-xs uppercase tracking-[0.25em] text-muted">
+              Build Status
+            </p>
+            <h2 className="mt-2 text-2xl font-semibold tracking-tight">
+              실제 작업물을 올리기 전에 먼저 구축해둔 기반
+            </h2>
+          </div>
+        </div>
+
+        <div className="grid gap-5 lg:grid-cols-3">
+          {portfolioContent.featuredProjects.map((project) => {
+            const isExternal = project.href.startsWith("http");
+
+            const content = (
+              <article className="flex h-full flex-col rounded-3xl border border-border bg-surface/45 p-6 transition-colors hover:border-foreground">
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-muted">
+                      {project.status}
+                    </p>
+                    <h3 className="mt-3 text-lg font-medium">{project.name}</h3>
+                  </div>
+                </div>
+                <p className="mt-4 flex-1 text-sm leading-7 text-muted">
+                  {project.summary}
+                </p>
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {project.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="rounded-full border border-border px-3 py-1 text-xs text-muted"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </article>
+            );
+
+            return isExternal ? (
+              <a
+                key={project.name}
+                href={project.href}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {content}
+              </a>
+            ) : (
+              <Link key={project.name} href={project.href}>
+                {content}
+              </Link>
+            );
+          })}
+        </div>
+      </section>
+
+      <section className="grid gap-12 lg:grid-cols-[0.92fr_1.08fr]">
+        <div className="space-y-4">
+          <p className="font-mono text-xs uppercase tracking-[0.25em] text-muted">
+            Operating Model
+          </p>
+          <h2 className="text-2xl font-semibold tracking-tight">
+            홈은 포트폴리오로 두고, 뉴스는 별도 축으로 운영합니다.
+          </h2>
+          <p className="text-sm leading-7 text-muted">
+            참고한 포트폴리오 구조처럼 첫 화면에서는 사람과 작업을 먼저
+            보여주고, 뉴스 브리핑은 사이트의 신선도와 운영 역량을 증명하는
+            서브 페이지로 분리했습니다.
+          </p>
+        </div>
+
+        <div className="rounded-3xl border border-border bg-surface/55 p-6">
+          <ol className="space-y-4 text-sm leading-7">
+            <li>1. 홈에서는 소개, 작업 방향, 링크를 우선적으로 보여줍니다.</li>
+            <li>2. 뉴스 브리핑은 `/news`에서 아카이브 형태로 누적합니다.</li>
+            <li>3. Antigravity cron이 정해진 시간에 수집과 요약을 수행합니다.</li>
+            <li>4. 결과 파일이 갱신되면 GitHub 배포 파이프라인으로 반영합니다.</li>
+          </ol>
+        </div>
+      </section>
+
+      <section className="space-y-6">
+        <div>
+          <p className="font-mono text-xs uppercase tracking-[0.25em] text-muted">
+            Capabilities
+          </p>
+          <h2 className="mt-2 text-2xl font-semibold tracking-tight">
+            이 포트폴리오가 담아낼 기술 축
+          </h2>
+        </div>
+
+        <div className="grid gap-5 md:grid-cols-3">
+          {portfolioContent.capabilityGroups.map((group) => (
+            <article
+              key={group.title}
+              className="rounded-3xl border border-border bg-surface/45 p-6"
+            >
+              <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-muted">
+                {group.title}
+              </p>
+              <div className="mt-4 space-y-3">
+                {group.items.map((item) => (
+                  <p key={item} className="text-sm leading-7">
+                    {item}
+                  </p>
+                ))}
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="space-y-6">
+        <div className="flex items-end justify-between gap-4">
+          <div>
+            <p className="font-mono text-xs uppercase tracking-[0.25em] text-muted">
+              Latest Briefings
+            </p>
+            <h2 className="mt-2 text-2xl font-semibold tracking-tight">
+              최신 뉴스 브리핑 티저
+            </h2>
+          </div>
+          <Link
+            href="/news"
+            className="text-sm text-muted underline underline-offset-4 transition-opacity hover:opacity-70"
+          >
+            전체 아카이브
+          </Link>
+        </div>
+
+        <div className="grid gap-5 md:grid-cols-2">
+          {latestBriefings.map((briefing) => (
+            <Link
+              key={briefing.slug}
+              href={`/news/${briefing.slug}`}
+              className="rounded-3xl border border-border bg-surface/45 p-6 transition-colors hover:border-foreground"
+            >
+              <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-muted">
+                {editionLabel(briefing.edition)}
+              </p>
+              <h3 className="mt-3 text-lg font-medium">{briefing.title}</h3>
+              <p className="mt-2 text-sm text-muted">
+                {formatBriefingDate(briefing.publishedAt)}
+              </p>
+              <p className="mt-4 text-sm leading-7 text-muted">{briefing.deck}</p>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      <section
+        id="contact"
+        className="rounded-[2rem] border border-border bg-surface/55 px-6 py-8 sm:px-8"
+      >
+        <p className="font-mono text-xs uppercase tracking-[0.25em] text-muted">
+          Contact
+        </p>
+        <h2 className="mt-3 text-2xl font-semibold tracking-tight">
+          작업 문의와 연결 포인트
+        </h2>
+        <p className="mt-4 max-w-2xl text-sm leading-7 text-muted">
+          포트폴리오 정리, 자동화된 콘텐츠 운영, GitHub 기반 정적 배포 같은
+          흐름을 계속 확장해갈 예정입니다. 자세한 결과물과 소스는 아래 채널로
+          연결할 수 있습니다.
+        </p>
+        <div className="mt-6 flex flex-wrap gap-3 text-sm">
+          <a
+            href="mailto:zzimo9@gmail.com"
+            className="rounded-full border border-border px-5 py-2.5 transition-colors hover:border-foreground"
+          >
+            zzimo9@gmail.com
+          </a>
+          <a
+            href="https://github.com/zzimo9"
+            target="_blank"
+            rel="noreferrer"
+            className="rounded-full border border-border px-5 py-2.5 transition-colors hover:border-foreground"
+          >
+            GitHub Profile
+          </a>
+        </div>
+      </section>
+    </main>
   );
 }

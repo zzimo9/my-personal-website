@@ -1,5 +1,7 @@
-<!-- BEGIN:nextjs-agent-rules -->
-# This is NOT the Next.js you know
+# Agent Notes
 
-This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
-<!-- END:nextjs-agent-rules -->
+- This project uses Next.js 16 App Router with static export.
+- Dynamic news pages must remain compatible with `generateStaticParams()`.
+- News content is stored as JSON files under `src/content/news`.
+- Keep article content summarized; do not paste full source material.
+- Prefer changes that keep the Antigravity automation flow simple and reviewable.

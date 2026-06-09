@@ -10,154 +10,116 @@ export default async function Home() {
 
   return (
     <main className="editorial-stage relative overflow-hidden">
-      <div className="pointer-events-none fixed inset-y-0 left-3 z-30 hidden border-l border-border/50 xl:block" />
-      <div className="pointer-events-none fixed inset-y-0 right-3 z-30 hidden border-r border-border/50 xl:block" />
-
       <section className="border-b border-border/70">
-        <div className="mx-auto max-w-6xl px-6 pb-16 pt-10 lg:pb-24">
-          <div className="grid min-h-[calc(100vh-12rem)] gap-10 lg:grid-cols-[0.82fr_1.18fr]">
-            <div className="flex flex-col justify-between py-6">
-              <div className="space-y-8">
+        <div className="mx-auto max-w-6xl px-6 py-14 lg:py-20">
+          <div className="grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
+            <div className="space-y-8">
+              <div className="space-y-5">
                 <p className="meta-pill">{portfolioContent.eyebrow}</p>
-                <div className="space-y-5">
-                  <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted">
-                    Editorial portfolio surface / Seoul / 2026
-                  </p>
-                  <h1 className="editorial-display max-w-3xl text-5xl sm:text-6xl xl:text-7xl">
-                    {portfolioContent.title}
-                    <span className="editorial-dot">.</span>
-                  </h1>
-                  <p className="max-w-xl text-base leading-8 text-[color:var(--site-ink-soft)]">
-                    {portfolioContent.intro}
-                  </p>
-                </div>
-
-                <div className="flex flex-wrap gap-3 text-sm">
-                  {portfolioContent.links.map((link, index) =>
-                    link.href.startsWith("http") ? (
-                      <a
-                        key={link.label}
-                        href={link.href}
-                        target="_blank"
-                        rel="noreferrer"
-                        className={`rounded-full px-5 py-3 transition-colors ${
-                          index === 0
-                            ? "bg-accent text-white"
-                            : "border border-border hover:border-foreground"
-                        }`}
-                      >
-                        {link.label}
-                      </a>
-                    ) : (
-                      <Link
-                        key={link.label}
-                        href={link.href}
-                        className={`rounded-full px-5 py-3 transition-colors ${
-                          index === 0
-                            ? "bg-accent text-white"
-                            : "border border-border hover:border-foreground"
-                        }`}
-                      >
-                        {link.label}
-                      </Link>
-                    ),
-                  )}
-                </div>
-
-                <div className="flex flex-wrap gap-4">
-                  {portfolioContent.heroStats.map((stat) => (
-                    <div
-                      key={stat.label}
-                      className="flex items-center gap-3 rounded-full border border-border bg-surface/70 px-4 py-2.5"
-                    >
-                      <span className="flex h-10 w-10 items-center justify-center rounded-full border border-dashed border-foreground font-mono text-[11px]">
-                        {stat.value}
-                      </span>
-                      <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted">
-                        {stat.label}
-                      </span>
-                    </div>
-                  ))}
-                </div>
+                <h1 className="max-w-3xl text-4xl font-semibold leading-tight tracking-normal text-foreground sm:text-5xl">
+                  {portfolioContent.title}
+                </h1>
+                <p className="max-w-2xl text-base leading-8 text-[color:var(--site-ink-soft)]">
+                  {portfolioContent.intro}
+                </p>
               </div>
 
-              <div className="mt-10 flex flex-col gap-4 border-t border-border/70 pt-6 text-sm text-muted md:flex-row md:items-end md:justify-between">
-                <p className="max-w-sm leading-7">
-                  포트폴리오, 정적 배포, 자동 브리핑을 하나의 지면처럼 다루는
-                  개인 운영 서버.
-                </p>
-                <p className="font-mono text-[11px] uppercase tracking-[0.18em]">
-                  Main issue / Portfolio first
-                </p>
+              <div className="flex flex-wrap gap-3 text-sm">
+                {portfolioContent.links.map((link, index) =>
+                  link.href.startsWith("http") ? (
+                    <a
+                      key={link.label}
+                      href={link.href}
+                      target="_blank"
+                      rel="noreferrer"
+                      className={`rounded-md px-4 py-2.5 transition-colors ${
+                        index === 0
+                          ? "bg-accent text-white"
+                          : "border border-border hover:border-foreground"
+                      }`}
+                    >
+                      {link.label}
+                    </a>
+                  ) : (
+                    <Link
+                      key={link.label}
+                      href={link.href}
+                      className={`rounded-md px-4 py-2.5 transition-colors ${
+                        index === 0
+                          ? "bg-accent text-white"
+                          : "border border-border hover:border-foreground"
+                      }`}
+                    >
+                      {link.label}
+                    </Link>
+                  ),
+                )}
+              </div>
+
+              <div className="grid gap-3 sm:grid-cols-3">
+                {portfolioContent.heroStats.map((stat) => (
+                  <div key={stat.label} className="border-t border-border pt-4">
+                    <p className="text-2xl font-semibold">{stat.value}</p>
+                    <p className="mt-1 font-mono text-[11px] uppercase tracking-[0.14em] text-muted">
+                      {stat.label}
+                    </p>
+                  </div>
+                ))}
               </div>
             </div>
 
-            <div className="relative min-h-[36rem]">
-              <div className="absolute inset-y-10 left-[10%] right-0 rounded-[2rem] border border-border/70 bg-surface/55 shadow-[0_28px_70px_-42px_rgba(21,20,15,0.35)]" />
-
-              <div className="paper-panel tilt-left drift-slow absolute left-0 top-10 w-56 p-5">
-                <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted">
-                  Operating note
+            <div className="grid gap-4">
+              <div className="paper-panel p-6">
+                <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-muted">
+                  Current focus
                 </p>
-                <div className="mt-4 space-y-4">
-                  {portfolioContent.highlights.map((item) => (
-                    <div key={item.label} className="border-t border-border/60 pt-4 first:border-t-0 first:pt-0">
-                      <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-muted">
-                        {item.label}
-                      </p>
-                      <p className="mt-2 text-sm leading-6">{item.value}</p>
+                <div className="mt-5 grid gap-4">
+                  {portfolioContent.focusAreas.map((area) => (
+                    <div key={area.title} className="border-t border-border/70 pt-4">
+                      <h2 className="text-base font-semibold">{area.title}</h2>
+                      <p className="mt-2 text-sm leading-7 text-muted">{area.body}</p>
                     </div>
                   ))}
                 </div>
               </div>
 
-              <div className="absolute right-6 top-0 w-[72%] rounded-[2.25rem] border border-border/70 bg-[linear-gradient(160deg,rgba(255,255,255,0.28),rgba(239,229,214,0.7))] p-8 shadow-[0_34px_80px_-44px_rgba(21,20,15,0.4)]">
-                <div className="flex items-start justify-between gap-4">
-                  <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-muted">
-                    Nº 01 / Editorial build
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div className="paper-panel p-5">
+                  <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-muted">
+                    Operations
                   </p>
-                  <p className="font-serif text-3xl italic text-accent">Portfolio.</p>
-                </div>
-                <div className="mt-8 space-y-6">
-                  {portfolioContent.focusAreas.map((area, index) => (
-                    <div key={area.title} className="grid gap-3 border-t border-border/60 pt-5 md:grid-cols-[4.5rem_1fr]">
-                      <p className="font-serif text-3xl italic text-accent/80">
-                        0{index + 1}
-                      </p>
-                      <div>
-                        <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted">
-                          {area.title}
-                        </p>
-                        <p className="mt-2 text-base leading-7">{area.body}</p>
+                  <div className="mt-4 space-y-3">
+                    {portfolioContent.highlights.map((item) => (
+                      <div key={item.label}>
+                        <p className="text-sm font-medium">{item.label}</p>
+                        <p className="mt-1 text-sm leading-6 text-muted">{item.value}</p>
                       </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
-              </div>
 
-              <div className="paper-panel tilt-right drift-mid absolute bottom-10 right-10 w-[23rem] p-6">
-                <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-muted">
-                  Briefing preview
-                </p>
-                <div className="mt-4 space-y-4">
-                  {latestBriefings.map((briefing) => (
-                    <div key={briefing.slug} className="border-t border-border/60 pt-4 first:border-t-0 first:pt-0">
-                      <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-muted">
-                        {editionLabel(briefing.edition)}
-                      </p>
-                      <p className="mt-2 text-sm font-medium leading-6">
-                        {briefing.title}
-                      </p>
-                      <p className="mt-1 text-xs uppercase tracking-[0.18em] text-muted">
-                        {formatBriefingDate(briefing.publishedAt)}
-                      </p>
-                    </div>
-                  ))}
+                <div className="paper-panel p-5">
+                  <p className="font-mono text-[11px] uppercase tracking-[0.16em] text-muted">
+                    Latest briefings
+                  </p>
+                  <div className="mt-4 space-y-4">
+                    {latestBriefings.map((briefing) => (
+                      <Link
+                        key={briefing.slug}
+                        href={`/news/${briefing.slug}`}
+                        className="block border-t border-border/70 pt-3 first:border-t-0 first:pt-0"
+                      >
+                        <p className="text-sm font-medium leading-6">
+                          {briefing.title}
+                        </p>
+                        <p className="mt-1 text-xs text-muted">
+                          {editionLabel(briefing.edition)} ·{" "}
+                          {formatBriefingDate(briefing.publishedAt)}
+                        </p>
+                      </Link>
+                    ))}
+                  </div>
                 </div>
-              </div>
-
-              <div className="absolute bottom-2 left-12 rounded-full border border-border/70 bg-background/80 px-4 py-3 font-mono text-[11px] uppercase tracking-[0.18em] text-muted backdrop-blur">
-                09:00 / 18:00 / archive loop
               </div>
             </div>
           </div>
@@ -212,9 +174,9 @@ export default async function Home() {
               <span className="editorial-dot">.</span>
             </h2>
             <p className="max-w-lg text-base leading-8 text-[color:var(--site-ink-soft)]">
-              레퍼런스처럼 시각적 분위기는 강하게 가져가되, 목적은 명확하게
-              포트폴리오에 둡니다. 그래서 이 홈은 소개 페이지가 아니라 앞으로
-              실제 작업물이 들어올 수 있는 편집형 표지면으로 설계합니다.
+              시각적 분위기는 강하게 가져가되, 목적은 명확하게 포트폴리오에
+              둡니다. 이 홈은 소개 페이지를 넘어 배포, 문서화, 자동화 흐름까지
+              함께 보여주는 편집형 표지면입니다.
             </p>
           </div>
           <div className="grid gap-5 md:grid-cols-3">
@@ -244,14 +206,14 @@ export default async function Home() {
             <div className="space-y-6">
               <p className="meta-pill text-accent">Selected builds</p>
               <h2 className="editorial-display max-w-xl text-4xl text-white sm:text-5xl">
-                실제 작업물을 올리기 전에 먼저 <em>뼈대와 배포</em>를 완성하는
-                단계
+                지금 공개 가능한 산출물을 <em>웹과 운영 흐름</em>으로 묶어둔
+                현재 버전
                 <span className="editorial-dot">.</span>
               </h2>
               <p className="max-w-lg text-base leading-8 text-white/72">
-                지금 이 사이트는 결과물을 채워 넣기 전 단계의 기반 작업을
-                보여줍니다. 레이아웃, 정적 배포, 아카이브 구조, 자동화 동선을
-                먼저 다듬고 있습니다.
+                레이아웃, 정적 배포, 아카이브 구조, 자동화 동선은 이미
+                동작하는 형태로 연결되어 있습니다. 아래 항목은 현재 저장소에서
+                바로 확인할 수 있는 산출물입니다.
               </p>
             </div>
             <div className="grid gap-5 lg:grid-cols-3">
@@ -412,14 +374,13 @@ export default async function Home() {
             <div className="space-y-5">
               <p className="meta-pill">Contact</p>
               <h2 className="editorial-display max-w-3xl text-4xl sm:text-5xl">
-                작업물은 나중에 채워도, <em>무대와 구조</em>는 지금부터 제대로
-                준비합니다
+                새 작업은 이 구조 위에 쌓고, <em>운영 가능한 상태</em>로
+                계속 배포합니다
                 <span className="editorial-dot">.</span>
               </h2>
               <p className="max-w-2xl text-base leading-8 text-[color:var(--site-ink-soft)]">
-                다음 단계에서는 실제 프로젝트, 노트, 브리핑 기록을 이 구조 안에
-                차곡차곡 쌓아 넣을 예정입니다. 소스와 운영 흐름은 아래 채널로
-                이어집니다.
+                이후 추가되는 프로젝트, 노트, 브리핑 기록은 이 구조 안에 계속
+                누적됩니다. 소스와 운영 흐름은 아래 채널로 이어집니다.
               </p>
             </div>
             <div className="space-y-4">

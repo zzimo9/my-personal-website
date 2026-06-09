@@ -9,7 +9,11 @@
 
 ## Near-Term Tasks
 
-1. Replace placeholder project sections with real portfolio entries and external links.
-2. Decide whether to connect a custom domain and then finalize metadata / SEO.
-3. Connect the external news automation flow so JSON briefings can be refreshed on schedule.
-4. Turn on GitHub-side protections for `main` such as branch protection and secret-related checks.
+1. Decide whether to connect a custom domain and then finalize domain-specific SEO.
+2. Connect the external news automation flow so JSON briefings can be refreshed on schedule.
+3. Turn on GitHub-side protections for `main` such as branch protection and secret-related checks.
+
+## Completed
+
+- Replaced placeholder project sections with live portfolio entries and repository links.
+- Added GitHub Pages-based canonical, Open Graph, Twitter, author, and keyword metadata.

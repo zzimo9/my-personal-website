@@ -87,7 +87,7 @@ export function SiteHeader() {
               href="https://github.com/zzimo9/my-personal-website"
               target="_blank"
               rel="noreferrer"
-              className="hidden rounded-full bg-foreground px-4 py-2 text-xs text-background md:inline-flex"
+              className="hidden text-sm text-foreground underline-offset-4 transition-colors hover:text-muted hover:underline md:inline-flex"
             >
               GitHub
             </a>

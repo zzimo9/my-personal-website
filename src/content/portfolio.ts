@@ -2,10 +2,9 @@ import type { PortfolioContent } from "@/types/portfolio";
 
 export const portfolioContent: PortfolioContent = {
   eyebrow: "DEV_KU / Personal Edition",
-  title:
-    "만든 결과물과 운영 감각을 한 장의 지면처럼 엮어내는 개인 포트폴리오 서버.",
+  title: "DEV_KU 개인 포트폴리오",
   intro:
-    "이 사이트의 메인은 포트폴리오입니다. 작업물, 운영 방식, 자동화 감각을 분리하지 않고 하나의 흐름으로 보여주는 개인 웹 기반을 먼저 구축하고 있습니다.",
+    "Next.js와 GitHub Pages로 운영하는 개인 웹사이트입니다. 작업물, 배포 흐름, 운영 문서, 뉴스 브리핑 아카이브를 한곳에 정리합니다.",
   links: [
     { label: "작업 영역 보기", href: "/#work" },
     { label: "뉴스 아카이브 보기", href: "/news" },
@@ -15,14 +14,14 @@ export const portfolioContent: PortfolioContent = {
     },
   ],
   heroStats: [
-    { label: "Morning edition", value: "09:00" },
-    { label: "Evening edition", value: "18:00" },
-    { label: "Deploy surface", value: "GitHub Pages" },
+    { label: "Static pages", value: "7" },
+    { label: "News editions", value: "2" },
+    { label: "Deploy", value: "Pages" },
   ],
   highlights: [
-    { label: "운영 기준", value: "포트폴리오 메인, 뉴스는 보조 축" },
-    { label: "배포 방식", value: "GitHub Pages 정적 배포" },
-    { label: "자동화 리듬", value: "오전 9시, 오후 6시 브리핑 발행" },
+    { label: "운영 기준", value: "main 브랜치 기준 배포, 기능 작업은 feature 브랜치" },
+    { label: "배포 방식", value: "Next.js static export와 GitHub Actions" },
+    { label: "자동화 리듬", value: "오전 9시, 오후 6시 JSON 브리핑 갱신" },
   ],
   tickerItems: [
     { label: "Portfolio first", meta: "Main surface" },
@@ -30,46 +29,46 @@ export const portfolioContent: PortfolioContent = {
     { label: "Static export", meta: "Next.js 16" },
     { label: "GitHub Actions", meta: "Auto deploy" },
     { label: "Seoul / KR", meta: "Local base" },
-    { label: "Codex rebuild", meta: "In progress" },
+    { label: "Portfolio cards", meta: "Live entries" },
   ],
   focusAreas: [
     {
       title: "Portfolio Web",
-      body: "작업 결과물과 운영 철학을 한 화면 안에서 신뢰감 있게 읽히도록 구성합니다.",
+      body: "개인 소개, 작업물, 배포 상태를 한 화면에서 읽히도록 구성한 정적 포트폴리오입니다.",
     },
     {
       title: "AI Briefings",
-      body: "출근신문과 퇴근신문 포맷으로 뉴스 수집, 요약, 게시 흐름을 보조 레이어로 운영합니다.",
+      body: "출근신문과 퇴근신문 포맷의 JSON 콘텐츠를 정적 아카이브로 쌓는 구조입니다.",
     },
     {
       title: "Automation",
-      body: "스케줄 실행, 산출물 반영, 정적 배포까지 이어지는 자동화 체인을 설계합니다.",
+      body: "외부 에이전트, GitHub push, Pages 재배포까지 이어지는 운영 루틴을 문서화했습니다.",
     },
   ],
   featuredProjects: [
     {
-      name: "Portfolio Landing Base",
+      name: "DEV_KU Portfolio Site",
       summary:
-        "실제 작업물을 나중에 올릴 수 있도록 먼저 개인 포트폴리오 홈의 구조와 스타일 시스템을 정리한 기반입니다.",
-      status: "구성 중",
-      href: "/",
+        "Next.js 16 App Router와 Tailwind CSS v4로 만든 개인 포트폴리오입니다. 정적 export를 전제로 홈, 뉴스 아카이브, 운영 문서를 함께 묶었습니다.",
+      status: "배포 가능",
+      href: "https://zzimo9.github.io/my-personal-website/",
       tags: ["Next.js 16", "React 19", "Tailwind v4", "TypeScript"],
     },
     {
-      name: "News Archive Foundation",
+      name: "Briefing Archive",
       summary:
-        "출근신문과 퇴근신문을 나중에 누적 발행할 수 있도록 정적 아카이브 경로와 콘텐츠 구조를 먼저 준비해둔 상태입니다.",
-      status: "준비 완료",
+        "아침/저녁 브리핑 JSON을 `generateStaticParams()`로 정적 상세 페이지에 연결한 뉴스 아카이브입니다.",
+      status: "운영 준비",
       href: "/news",
       tags: ["JSON Content", "Static Archive", "AI Agent Workflow"],
     },
     {
-      name: "GitHub Pages Deployment",
+      name: "GitHub Pages Ops Kit",
       summary:
-        "GitHub Actions와 Next.js static export를 연결해 무료 호스팅 환경에서도 바로 배포 가능한 퍼블리싱 파이프라인입니다.",
-      status: "구축 완료",
-      href: "https://github.com/zzimo9/my-personal-website",
-      tags: ["GitHub Pages", "Actions", "Static Export"],
+        "Pages 배포 체크리스트, 새 PC 복구 가이드, 두 PC 브랜치 전략, 저장소 보안 하드닝 문서를 묶은 운영 키트입니다.",
+      status: "문서화 완료",
+      href: "https://github.com/zzimo9/my-personal-website/tree/main/docs",
+      tags: ["GitHub Pages", "Branch Workflow", "Security Docs"],
     },
   ],
   methodSteps: [

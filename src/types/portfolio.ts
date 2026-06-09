@@ -26,13 +26,32 @@ export type CapabilityGroup = {
   items: string[];
 };
 
+export type HeroStat = {
+  label: string;
+  value: string;
+};
+
+export type TickerItem = {
+  label: string;
+  meta: string;
+};
+
+export type MethodStep = {
+  number: string;
+  title: string;
+  body: string;
+};
+
 export type PortfolioContent = {
   eyebrow: string;
   title: string;
   intro: string;
   links: PortfolioLink[];
+  heroStats: HeroStat[];
   highlights: PortfolioHighlight[];
+  tickerItems: TickerItem[];
   focusAreas: FocusArea[];
   featuredProjects: FeaturedProject[];
+  methodSteps: MethodStep[];
   capabilityGroups: CapabilityGroup[];
 };

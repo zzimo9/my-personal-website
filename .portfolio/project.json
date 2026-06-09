@@ -30,10 +30,13 @@
     "포트폴리오 에이전트가 읽을 수 있는 공개 안전 메타데이터 계약을 추가했습니다."
   ],
   "doNotPublish": [
-    "secret",
-    "token",
-    "credential",
-    "real .env key names",
+    "secret values",
+    "token values",
+    "credential details",
+    "real environment variable key names",
+    "project-specific config key names",
+    "service account names",
+    "private integration identifiers",
     "internal API/routes",
     "deployment internals",
     "vulnerability details",

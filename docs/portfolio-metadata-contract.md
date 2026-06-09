@@ -39,7 +39,7 @@ Optional:
   "techStack": ["Tech"],
   "highlights": ["Public-safe feature/result."],
   "safeRecentWork": ["Do not copy commit messages."],
-  "doNotPublish": ["secret", "env names", "internal routes"],
+  "doNotPublish": ["secret values", "credential details", "internal details"],
   "reviewNotes": [],
   "lastUpdatedAt": "2026-06-10T00:00:00Z"
 }
@@ -84,7 +84,7 @@ Private repositories must stay summary-only:
 }
 ```
 
-Because the repo is private, keep all portfolio metadata summary-only and public-safe. Do not include repo URLs, commit messages, internal paths, env key names, API routes, DB/table names, or deployment details anywhere, including `reviewNotes`.
+Because the repo is private, keep all portfolio metadata summary-only and public-safe. Do not include repo URLs, commit messages, internal paths, environment variable key names, project-specific config key names, service account names, private integration identifiers, API routes, DB/table names, or deployment details anywhere, including `reviewNotes`, `doNotPublish`, generated pull request text, and portfolio website output.
 
 ## Private Fallback Inspection
 
@@ -96,7 +96,7 @@ Do not directly publish inferred private details unless approved in `.portfolio/
 
 `reviewNotes` is publishable. Keep it public-safe.
 
-Do not put internal-only notes, env key names, private routes, DB/table names, private URLs, commit messages, deployment internals, vulnerability details, or any other private implementation details in `reviewNotes`.
+Do not put internal-only notes, environment variable key names, project-specific config key names, service account names, private integration identifiers, private routes, DB/table names, private URLs, commit messages, deployment internals, vulnerability details, or any other private implementation details in `reviewNotes`.
 
 If a note is not safe for the public website, do not write it to `.portfolio/project.json`.
 
@@ -109,12 +109,17 @@ Never publish:
 - private commit messages
 - internal API/routes
 - secret/token/credential
-- real `.env` key names
+- real environment variable key names
+- project-specific config key names
+- service account names
+- private integration identifiers
 - deployment internals
 - vulnerability details
 - private DB/table/bucket names
 
 If unsure, omit the detail from public fields and add only a public-safe review note.
+
+This rule applies everywhere public text may be written, including `summary`, `highlights`, `safeRecentWork`, `reviewNotes`, `doNotPublish`, generated pull request titles/descriptions, and portfolio website output.
 
 ## API Credential Wording
 
@@ -125,10 +130,13 @@ Allowed wording:
 
 Not allowed:
 
-- actual env key names
+- actual environment variable key names
 - project-specific config keys
 - token names
 - service account names
+- private integration identifiers
+
+If credential-related context is necessary, use only generic wording. Never include real environment variable key names, project-specific config keys, service account names, or private integration identifiers anywhere, including `reviewNotes`, `doNotPublish`, generated pull request text, and portfolio website output.
 
 ## Style
 
@@ -144,19 +152,10 @@ Not allowed:
 For `news-collector` and `ku-s-food-list`, add this instruction to the project agent:
 
 ```text
-Because this repo is private, keep all portfolio metadata summary-only and public-safe. Do not include repo URLs, commit messages, internal paths, env key names, API routes, DB/table names, or deployment details anywhere, including reviewNotes.
+Because this repo is private, keep all portfolio metadata summary-only and public-safe. Do not include repo URLs, commit messages, internal paths, environment variable key names, project-specific config keys, service account names, private integration identifiers, API routes, DB/table names, or deployment details anywhere, including reviewNotes, doNotPublish, PR text, and portfolio website output.
 ```
 
-If existing private project metadata contains:
-
-```json
-{
-  "url": "",
-  "liveUrl": ""
-}
-```
-
-change only the absent URL fields to:
+If existing private project metadata uses empty strings for absent repository, source, or live URLs, change only those absent URL fields to:
 
 ```json
 {

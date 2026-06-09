@@ -39,6 +39,8 @@ npm run build
 
 이 프로젝트는 `output: "export"`를 사용하므로 서버 런타임 없이 정적 사이트로 배포됩니다.
 
+새 PC 환경 복구 가이드는 [docs/setup-on-new-pc.md](/C:/devku/my-personal-website/docs/setup-on-new-pc.md) 에 정리되어 있습니다.
+
 ## GitHub Pages Deployment
 
 현재 저장소에는 다음 배포 구성이 포함되어 있습니다.
@@ -88,3 +90,20 @@ GitHub Pages는 무료이지만 `정적 호스팅`입니다.
 - 실제 포트폴리오 작업물 반영
 - 커스텀 도메인 연결 여부 결정
 - 뉴스 자동화 에이전트와 GitHub 반영 루틴 연결
+
+## Repository Notes
+
+GitHub에는 소스 코드와 문서, 설정 파일만 올립니다.
+
+- 포함
+  - `src/`
+  - `public/`
+  - `package.json`
+  - `package-lock.json`
+  - `.github/workflows/`
+  - `docs/`
+- 제외
+  - `node_modules/`
+  - `.next/`
+  - `out/`
+  - `.env*`

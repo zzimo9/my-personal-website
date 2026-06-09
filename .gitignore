@@ -24,6 +24,7 @@
 .DS_Store
 *.pem
 .gemini_plan.md
+pages-run-*
 
 # debug
 npm-debug.log*

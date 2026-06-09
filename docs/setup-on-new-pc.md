@@ -2,6 +2,16 @@
 
 이 문서는 다른 PC에서 이 프로젝트를 다시 받아 작업 환경을 빠르게 복구하기 위한 가이드입니다.
 
+## 권장 기본 환경
+
+- Windows 11 host
+- WSL2 Ubuntu
+- VS Code
+- bash
+- WSL 네이티브 작업 경로 예시: `~/workspace/my-personal-website`
+
+가능하면 `/mnt/c/...` 경로보다 WSL 홈 또는 워크스페이스 내부에서 작업하는 것을 권장합니다.
+
 ## 무엇이 GitHub에 들어가는가
 
 저장소에는 아래 항목이 포함됩니다.
@@ -33,6 +43,15 @@
 ## 1. 저장소 받기
 
 ```bash
+git clone https://github.com/zzimo9/my-personal-website.git
+cd my-personal-website
+```
+
+WSL 기준 권장 예시:
+
+```bash
+mkdir -p ~/workspace
+cd ~/workspace
 git clone https://github.com/zzimo9/my-personal-website.git
 cd my-personal-website
 ```
@@ -70,6 +89,12 @@ HTTPS 개발이 필요하면:
 
 ```bash
 npm run https
+```
+
+VS Code를 WSL에 붙여 열려면:
+
+```bash
+code .
 ```
 
 ## 5. 검증
@@ -117,6 +142,8 @@ git push -u origin feature/my-change
 ## 9. 빠른 복구 요약
 
 ```bash
+mkdir -p ~/workspace
+cd ~/workspace
 git clone https://github.com/zzimo9/my-personal-website.git
 cd my-personal-website
 nvm install

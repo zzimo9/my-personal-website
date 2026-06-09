@@ -99,14 +99,15 @@ git push -u origin feature/my-change
 
 브랜치 전략과 두 PC 운영 흐름은 아래 문서를 참고하면 됩니다.
 
-- [docs/branch-strategy.md](/C:/devku/my-personal-website/docs/branch-strategy.md)
-- [docs/two-pc-workflow.md](/C:/devku/my-personal-website/docs/two-pc-workflow.md)
+- [docs/branch-strategy.md](branch-strategy.md)
+- [docs/two-pc-workflow.md](two-pc-workflow.md)
+- [docs/repository-security-hardening.md](repository-security-hardening.md)
 
 ## 7. 배포 관련 메모
 
 - GitHub Pages는 이미 이 저장소 구조에 맞게 설정되어 있습니다.
 - `main`에 push 하면 GitHub Actions가 Pages 재배포를 수행합니다.
-- 자세한 체크리스트는 [docs/github-pages-deployment-checklist.md](/C:/devku/my-personal-website/docs/github-pages-deployment-checklist.md) 참고
+- 자세한 체크리스트는 [docs/github-pages-deployment-checklist.md](github-pages-deployment-checklist.md) 참고
 
 ## 8. 자동화 관련 메모
 

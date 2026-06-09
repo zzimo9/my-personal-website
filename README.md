@@ -39,9 +39,10 @@ npm run build
 
 이 프로젝트는 `output: "export"`를 사용하므로 서버 런타임 없이 정적 사이트로 배포됩니다.
 
-새 PC 환경 복구 가이드는 [docs/setup-on-new-pc.md](/C:/devku/my-personal-website/docs/setup-on-new-pc.md) 에 정리되어 있습니다.
-브랜치 운영 전략은 [docs/branch-strategy.md](/C:/devku/my-personal-website/docs/branch-strategy.md) 에 정리되어 있습니다.
-두 대의 개발 PC를 오가며 작업하는 흐름은 [docs/two-pc-workflow.md](/C:/devku/my-personal-website/docs/two-pc-workflow.md) 에 정리되어 있습니다.
+새 PC 환경 복구 가이드는 [docs/setup-on-new-pc.md](docs/setup-on-new-pc.md) 에 정리되어 있습니다.
+브랜치 운영 전략은 [docs/branch-strategy.md](docs/branch-strategy.md) 에 정리되어 있습니다.
+두 대의 개발 PC를 오가며 작업하는 흐름은 [docs/two-pc-workflow.md](docs/two-pc-workflow.md) 에 정리되어 있습니다.
+저장소 보안 운영 가이드는 [docs/repository-security-hardening.md](docs/repository-security-hardening.md) 에 정리되어 있습니다.
 
 ## Branch Workflow
 
@@ -81,7 +82,7 @@ npm run build
 3. GitHub 저장소 `Settings > Pages`에서 `GitHub Actions`를 소스로 선택
 4. 이후 `main`에 push 할 때마다 자동 배포
 
-배포 전 체크리스트는 [docs/github-pages-deployment-checklist.md](/C:/devku/my-personal-website/docs/github-pages-deployment-checklist.md)에서 바로 확인할 수 있습니다.
+배포 전 체크리스트는 [docs/github-pages-deployment-checklist.md](docs/github-pages-deployment-checklist.md)에서 바로 확인할 수 있습니다.
 
 ## Important Limitation
 
@@ -105,7 +106,7 @@ GitHub Pages는 무료이지만 `정적 호스팅`입니다.
 - `YYYY-MM-DD-morning.json`
 - `YYYY-MM-DD-evening.json`
 
-운영 가이드는 [docs/news-automation.md](/C:/devku/my-personal-website/docs/news-automation.md)에 정리되어 있습니다.
+운영 가이드는 [docs/news-automation.md](docs/news-automation.md)에 정리되어 있습니다.
 
 ## Next Step
 
